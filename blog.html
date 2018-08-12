@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.code-snippet {
+		    background-color: #f0f0f0;
+		    border: 1px solid #cccccc;
+		    padding: 10px;
+		    max-width: 100%;
+		    overflow: auto;
+		    font-size: 12px;
+		    color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<p>This is sample text</p>
+	<pre class="code-snippet">
+public class MainApp {
+	public static void main(String[] args) {
+		System.out.println("ProcessorDouble Lambda");
+		System.out.println("------------------");
+		Processor processorDouble  = n -> n * 2;
+		System.out.println(processorDouble.process(10));
+
+		System.out.println("\n");
+
+		System.out.println("DefaultGreeter Lambda");
+
+		Greeter greeter = o -> "Hi " + o;
+
+}
+	</pre>
+	<p>This is second line of text</p>
+</body>
+</html>
