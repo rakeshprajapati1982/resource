@@ -12,6 +12,16 @@
 		    overflow: auto;
 		    font-size: 12px;
 		    color: #000000;
+		    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		}
+		.code-highlight {
+		    background-color: #f0f0f0;
+		    font-size: 14px;
+		    color: rgb(215, 58, 73);
+		    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		    font-weight: bold;
+		    padding-left: 5px;
+		    padding-right: 5px;
 		}
 	</style>
 </head>
@@ -34,5 +44,6 @@ public class MainApp {
 }
 	</pre>
 	<p>This is second line of text</p>
+	<p>Only important line which is doing real work is <span class="code-highlight">return input * 2</span>. Rest every thing is overhead ceremonial code.</p>
 </body>
 </html>
