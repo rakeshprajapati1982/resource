@@ -4,46 +4,101 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<style type="text/css">
-		.code-snippet {
+		pre.code {
 		    background-color: #f0f0f0;
-		    border: 1px solid #cccccc;
+		    border: 1px dashed #999999; 
 		    padding: 10px;
-		    max-width: 100%;
+		    margin-bottom: 10px;
+		    width: 100%;
 		    overflow: auto;
 		    font-size: 12px;
+		    line-height: 15px;
 		    color: #000000;
-		    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		    /*font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
+		    font-family: Monaco, Courier, monospace;
 		}
-		.code-highlight {
+
+		pre.code code {
+			word-wrap: normal;
+		}
+
+		span.code {
 		    background-color: #f0f0f0;
-		    font-size: 14px;
+		    font-size: 15px;
 		    color: rgb(215, 58, 73);
-		    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-		    font-weight: bold;
+		    /*font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
+		    font-family: Monaco, Courier, monospace;
+		    font-weight: normal;
 		    padding-left: 5px;
 		    padding-right: 5px;
 		}
 	</style>
 </head>
 <body>
+	<pre style="
+			background-color: #eeeeee; 
+			border: 1px dashed #999999; 
+			color: black; 
+			font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; 
+			font-size: 12px; 
+			line-height: 14px; 
+			overflow: auto; 
+			padding: 5px; 
+			width: 100%;">
+			<code style="color: black; word-wrap: normal;">
+Cache Initialized
+Entries in the Cache at: Tue Jan 09 22:10:01 EST 2018
+--------------------
+Key: 1, Value: null
+Key: 2, Value: null
+Key: 3, Value: Person [personId=3, firstName=firstName-1, lastName=lastName-3]
+	</code>
+	</pre>	
+
 	<p>This is sample text</p>
-	<pre class="code-snippet">
-public class MainApp {
-	public static void main(String[] args) {
-		System.out.println("ProcessorDouble Lambda");
-		System.out.println("------------------");
-		Processor processorDouble  = n -> n * 2;
-		System.out.println(processorDouble.process(10));
+	<pre class="code"><code>
+Cache Initialized
+Entries in the Cache at: Tue Jan 09 22:10:01 EST 2018
+--------------------
+Key: 1, Value: null
+Key: 2, Value: null
+Key: 3, Value: Person [personId=3, firstName=firstName-1, lastName=lastName-3]
+Key: 4, Value: Person [personId=4, firstName=firstName-1, lastName=lastName-4]
+Key: 5, Value: Person [personId=5, firstName=firstName-1, lastName=lastName-5]
+Key: 6, Value: Person [personId=6, firstName=firstName-1, lastName=lastName-6]
+Key: 7, Value: Person [personId=7, firstName=firstName-1, lastName=lastName-7]
 
-		System.out.println("\n");
+Waiting for 40 seconds
 
-		System.out.println("DefaultGreeter Lambda");
 
-		Greeter greeter = o -> "Hi " + o;
+After 40 seconds wait
 
-}
+Entries in the Cache at: Tue Jan 09 22:10:41 EST 2018
+--------------------
+Key: 1, Value: null
+Key: 2, Value: null
+Key: 3, Value: null
+Key: 4, Value: null
+Key: 5, Value: null
+Key: 6, Value: null
+Key: 7, Value: null
+
+Cache Usage Statitics
+--------------------
+CacheHits=5
+CacheHitPercentage=35.714287
+CacheMisses=9
+CacheMissPercentage=64.28571
+CacheGets=14
+CachePuts=7
+CacheRemovals=0
+CacheEvictions=2
+AverageGetTime=91.180786
+AveragePutTime=731.2153
+AverageRemoveTime=0.0
+	</code>
 	</pre>
 	<p>This is second line of text</p>
-	<p>Only important line which is doing real work is <span class="code-highlight">return input * 2</span>. Rest every thing is overhead ceremonial code.</p>
+	<p>Only important line which is doing real work is <span class="code">return input * 2</span>. Rest every thing is overhead ceremonial code.</p>
 </body>
 </html>
