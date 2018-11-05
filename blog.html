@@ -2,8 +2,50 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Sample code syntax highlighting</title>
 	<style type="text/css">
+
+		.code-snippet { /* DO-NO-USE this */
+		    background-color: #f0f0f0;
+		    border: 1px solid #cccccc;
+		    padding: 10px;
+		    max-width: 100%;
+		    overflow: auto;
+		    font-size: 12px;
+		    color: #000000;
+		    font-family: Monaco, Courier, monospace;
+		}
+
+		.code-highlight {
+		    background-color: #f0f0f0;
+		    font-size: 14px;
+		    color: rgb(215, 58, 73);
+		    font-family: Monaco, Courier, monospace;
+		    font-weight: normal;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		}
+
+		/* For PrimsJS customization */
+		pre[class*="language-"] {
+			font-size: 14px !important;
+			background: #f9f9fa !important;
+			border: 1px solid rgba(51, 51, 51, 0.1);
+		}
+
+		div.filename{
+			border: 1px solid rgba(51, 51, 51, 0.1);
+			border-bottom: none;
+			margin-bottom: -0.5em;
+			margin-top: 0.5em;
+			padding: 0.2em;
+			padding-left: 1em;
+			background-color: #cdf1f5;
+			font-weight: bold;
+			color: black;			
+		}
+
+		/*
 		pre.code {
 		    background-color: #f0f0f0;
 		    border: 1px dashed #999999; 
@@ -14,7 +56,6 @@
 		    font-size: 12px;
 		    line-height: 15px;
 		    color: #000000;
-		    /*font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
 		    font-family: Monaco, Courier, monospace;
 		}
 
@@ -26,38 +67,70 @@
 		    background-color: #f0f0f0;
 		    font-size: 15px;
 		    color: rgb(215, 58, 73);
-		    /*font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
 		    font-family: Monaco, Courier, monospace;
 		    font-weight: normal;
 		    padding-left: 5px;
 		    padding-right: 5px;
 		}
+		*/
 	</style>
+
+	<!-- PrismJS syntax highlighting -->
+	<link rel='stylesheet' href='https://dl.dropbox.com/s/fg2ndvbmz7jptyj/prism-default.css' type='text/css' media='all' />
+	<script type='text/javascript' src='https://dl.dropbox.com/s/ldfh2g35sfbh72t/prism-default.js'></script>
+
 </head>
 <body>
-	<pre style="
-			background-color: #eeeeee; 
-			border: 1px dashed #999999; 
-			color: black; 
-			font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; 
-			font-size: 12px; 
-			line-height: 14px; 
-			overflow: auto; 
-			padding: 5px; 
-			width: 100%;">
-			<code style="color: black; word-wrap: normal;">
-Cache Initialized
-Entries in the Cache at: Tue Jan 09 22:10:01 EST 2018
---------------------
-Key: 1, Value: null
-Key: 2, Value: null
-Key: 3, Value: Person [personId=3, firstName=firstName-1, lastName=lastName-3]
-	</code>
-	</pre>	
+	<h1>Prims JS</h1>
+	<p>Only important line which is doing real work is <code class="language-java">return input * 2</code>. Rest every thing is overhead ceremonial code.</p>
+	<div class="filename">MainApp.java</div>
+	<pre class="language-java line-numbers" ><code>package com.readtorakesh.java8.lambda_expression_basics;
 
-	<p>This is sample text</p>
-	<pre class="code"><code>
-Cache Initialized
+public class MainApp {
+	public static void main(String[] args) {
+		new MainApp().doMain();
+	}
+	
+	private void doMain() {
+		System.out.println("# Lambda - Double the value: 10");
+		System.out.println(processValue(10, n -> n * 2));
+		
+		System.out.println("\n");
+		
+		System.out.println("# Anonymous Inner Class - Double the value: 10");
+		System.out.println(processValue(10, new Processor() {
+			@Override
+			public int process(int input) {
+				return input * 2;
+			}
+		}));
+	}
+	
+	private int processValue(int value, Processor processor) {
+		return processor.process(value);
+	}
+}
+</code></pre>
+
+<pre class="language-java line-numbers" ><code>String[] quote = {"Java8", "is", "awesome"};
+StringBuffer combined = new StringBuffer();
+for(int i=0;i&lt;quote.length;i++) {
+   combined.append(quote[i]);
+   if(i &lt; quote.length - 1) {
+      combined.append("|");
+   }
+}
+System.out.println("Output: " + combined.toString());
+
+--- Output ---
+Output: Java8|is|awesome</code></pre>
+
+
+	<h1>Manual CSS code-snippet, code-highlight</h1>
+
+
+<p>This is sample text</p>
+	<pre class="code-snippet"><code>Cache Initialized
 Entries in the Cache at: Tue Jan 09 22:10:01 EST 2018
 --------------------
 Key: 1, Value: null
@@ -70,35 +143,9 @@ Key: 7, Value: Person [personId=7, firstName=firstName-1, lastName=lastName-7]
 
 Waiting for 40 seconds
 
-
-After 40 seconds wait
-
-Entries in the Cache at: Tue Jan 09 22:10:41 EST 2018
---------------------
-Key: 1, Value: null
-Key: 2, Value: null
-Key: 3, Value: null
-Key: 4, Value: null
-Key: 5, Value: null
-Key: 6, Value: null
-Key: 7, Value: null
-
-Cache Usage Statitics
---------------------
-CacheHits=5
-CacheHitPercentage=35.714287
-CacheMisses=9
-CacheMissPercentage=64.28571
-CacheGets=14
-CachePuts=7
-CacheRemovals=0
-CacheEvictions=2
-AverageGetTime=91.180786
-AveragePutTime=731.2153
-AverageRemoveTime=0.0
-	</code>
+AverageRemoveTime=0.0</code>
 	</pre>
 	<p>This is second line of text</p>
-	<p>Only important line which is doing real work is <span class="code">return input * 2</span>. Rest every thing is overhead ceremonial code.</p>
+	<p>Only important line which is doing real work is <code class="code-highlight">return input * 2</code>. Rest every thing is overhead ceremonial code.</p>
 </body>
 </html>
