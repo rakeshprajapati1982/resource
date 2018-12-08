@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Sample code syntax highlighting</title>
+
+	<style type="text/css">
+		.code-highlight {
+		    background-color: #f0f0f0;
+		    font-size: 14px;
+		    color: rgb(215, 58, 73);
+		    font-family: Monaco, Courier, monospace;
+		    font-weight: normal;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		}
+
+		/* For PrimsJS customization */
+		pre[class*="language-"] {
+			font-size: 14px !important;
+			background: #f9f9fa !important;
+			border: 1px solid rgba(51, 51, 51, 0.1);
+			margin-bottom: 25px !important;
+		}
+
+		div.filename{
+			border: 1px solid rgba(51, 51, 51, 0.1);
+			border-bottom: none;
+			margin-bottom: -0.5em;
+			margin-top: 0.5em;
+			padding: 0.2em;
+			padding-left: 1em;
+			background-color: #E1F1FB;
+			font-weight: bold;
+			color: black;			
+		}
+
+		/* This is for Submit button on contact form */
+		.contact-form .submit-btn {
+		    font-size: 14px !important;
+		    padding: 0 18px !important;
+		    background-color: #48d !important;
+		    color: #FFFFFF !important;
+		}
+
+	</style>
+
+	<!-- PrismJS syntax highlighting -->
+	<link rel='stylesheet' href='https://dl.dropbox.com/s/fg2ndvbmz7jptyj/prism-default.css' type='text/css' media='all' />
+	<script type='text/javascript' src='https://dl.dropbox.com/s/ldfh2g35sfbh72t/prism-default.js'></script>
+
+</head>
+<body>
+	<h1>Prims JS</h1>
+	<p>Only important line which is doing real work is <code class="language-java">return input * 2</code>. Rest every thing is overhead ceremonial code.</p>
+	
+	<div class="filename">MainApp.java</div>
+	<pre class="language-java line-numbers"><code>package com.readtorakesh.java8.lambda_expression_basics;
+
+public class MainApp {
+	public static void main(String[] args) {
+		new MainApp().doMain();
+	}
+	
+	private void doMain() {
+		System.out.println("# Lambda - Double the value: 10");
+		System.out.println(processValue(10, n -> n * 2));
+		
+		System.out.println("\n");
+		
+		System.out.println("# Anonymous Inner Class - Double the value: 10");
+		System.out.println(processValue(10, new Processor() {
+			@Override
+			public int process(int input) {
+				return input * 2;
+			}
+		}));
+	}
+	
+	private int processValue(int value, Processor processor) {
+		return processor.process(value);
+	}
+}
+</code></pre>
+
+	<h1>Manual CSS code-snippet, code-highlight</h1>
+
+	<p>This is second line of text</p>
+	<p>Only important line which is doing real work is <span class="code-highlight">return input * 2</span>. Rest every thing is overhead ceremonial code.</p>
+</body>
+</html>
